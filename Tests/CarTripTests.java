@@ -10,8 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 
 public class CarTripTests {
-
-    /*
     @Test
     @Order(1)
     public void carTripConstructor() {
@@ -81,6 +79,4 @@ public class CarTripTests {
         String expected = "Distance traveled: 187 miles";
         assertEquals(expected, trip.toString());
     }
-
-     */
 }
