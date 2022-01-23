@@ -46,12 +46,64 @@ public class Fraction {
     }
 
     public String toString(){
-        return(getNumerator()+ "/" +getDenominator());
+        if(numerator > denominator){
+            int x = (numerator/denominator);
+            numerator %= denominator;
+            return( x + " " + numerator + "/" + denominator);
+        }
+        else return(numerator + "/" + denominator);
     }
-//    public static void main(String[] args) {
-//        Fraction f = new Fraction(423987,-847974);
-//
-//        System.out.println(f.toString());
-//    }
 
+    public static String add(String f1, String f2) {
+        int a = Integer.parseInt(f1.substring(0, f1.indexOf("/")));
+        int b = Integer.parseInt(f1.substring(f1.indexOf("/") + 1));
+        int c = Integer.parseInt(f2.substring(0, f2.indexOf("/")));
+        int d = Integer.parseInt(f2.substring(f2.indexOf("/") + 1));
+        int newnum = (a * d) + (c * b);
+        int newden = b * d;
+        Fraction newFrac = new Fraction(newnum, newden);
+        return newFrac.toString();
+    }
+
+    public static String subtract(String f1, String f2) {
+        int a = Integer.parseInt(f1.substring(0, f1.indexOf("/")));
+        int b = Integer.parseInt(f1.substring(f1.indexOf("/") + 1));
+        int c = Integer.parseInt(f2.substring(0, f2.indexOf("/")));
+        int d = Integer.parseInt(f2.substring(f2.indexOf("/") + 1));
+        int newnum = (a * d) - (c * b);
+        int newden = b * d;
+        Fraction newFrac = new Fraction(newnum, newden);
+        return newFrac.toString();
+    }
+
+    public static String multiply(String f1, String f2) {
+        int a = Integer.parseInt(f1.substring(0, f1.indexOf("/")));
+        int b = Integer.parseInt(f1.substring(f1.indexOf("/") + 1));
+        int c = Integer.parseInt(f2.substring(0, f2.indexOf("/")));
+        int d = Integer.parseInt(f2.substring(f2.indexOf("/") + 1));
+        int newnum = a * c;
+        int newden = b * d;
+        Fraction newFrac = new Fraction(newnum, newden);
+        return newFrac.toString();
+    }
+
+    public static String divide(String f1, String f2) {
+        int a = Integer.parseInt(f1.substring(0, f1.indexOf("/")));
+        int b = Integer.parseInt(f1.substring(f1.indexOf("/") + 1));
+        int c = Integer.parseInt(f2.substring(0, f2.indexOf("/")));
+        int d = Integer.parseInt(f2.substring(f2.indexOf("/") + 1));
+        int newnum = a * d;
+        int newden = b * c;
+        Fraction newFrac = new Fraction(newnum, newden);
+        return newFrac.toString();
+    }
+
+    public static void main(String[] args) {
+        Fraction f1 = new Fraction(2, 3);
+        Fraction f2 = new Fraction(2, 3);
+        System.out.println(add(f1.toString(), f2.toString()));
+    }
 }
+
+
+
