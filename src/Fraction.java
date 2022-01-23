@@ -48,10 +48,10 @@ public class Fraction {
     public String toString(){
         return(getNumerator()+ "/" +getDenominator());
     }
-
 //    public static void main(String[] args) {
 //        Fraction f = new Fraction(423987,-847974);
 //
 //        System.out.println(f.toString());
 //    }
+
 }
